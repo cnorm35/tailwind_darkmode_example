@@ -9,10 +9,21 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= render "shared/dark_mode_check" %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <%# <body class="dark:bg-black"> %>
+  <%#   <main class="container mx-auto mt-28 px-5 flex"> %>
+  <%#     <%= render "shared/darkmode_toggle" %1> %>
+  <%#     <%= yield %1> %>
+  <%#   </main> %>
+  <%# </body> %>
+
+  <body class="dark:bg-black">
+    <main class="flex-1">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+        <%= render "shared/darkmode_toggle" %>
+      </div>
       <%= yield %>
     </main>
   </body>
